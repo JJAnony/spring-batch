@@ -11,17 +11,17 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
 
 @Component
-public class ClientStep {
+public class DataStep {
 
     @Autowired
     private StepBuilderFactory stepFactory;
 
     @Bean
-    public Step clientFileStep(ItemReader<Client> clientItemReader, ItemWriter<Client> clientItemWriter) {
-        return stepFactory.get("client-file-step")
+    public Step clientFileStep(ItemReader dataItemReader, ItemWriter dataItemWriter) {
+        return stepFactory.get("data-file-step")
                 .<Client, Client>chunk(1)
-                .reader(clientItemReader)
-                .writer(clientItemWriter)
+                .reader(dataItemReader)
+                .writer(dataItemWriter)
                 .build();
     }
 }

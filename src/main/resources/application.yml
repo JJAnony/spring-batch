@@ -7,16 +7,9 @@ spring:
     initialize-schema: always
   datasource:
     driver-class-name: # driver
-    jdbcUrl: # url
+    url: # url
     username: # username
     password: # password
   jpa:
     hibernate:
       ddl-auto: update
-
-application:
-  datasource:
-    driver-class-name: # driver
-    jdbcUrl: # url
-    username: # username
-    password: # password

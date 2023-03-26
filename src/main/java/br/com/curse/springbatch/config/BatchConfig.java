@@ -16,9 +16,9 @@ public class BatchConfig {
     @Autowired()
     private JobBuilderFactory factory;
     @Bean
-    public Job clientFileJob(Step clientFileStep) {
-        return factory.get("client-job")
-                .start(clientFileStep)
+    public Job dataFileJob(Step dataFileStep) {
+        return factory.get("data-job")
+                .start(dataFileStep)
                 .incrementer(new RunIdIncrementer())
                 .build();
     }
