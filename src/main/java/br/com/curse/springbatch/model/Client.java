@@ -1,10 +1,14 @@
 package br.com.curse.springbatch.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Client {
     public String name;
     public String lastName;
     public String age;
     public String email;
+    public List<Transaction> transactions = new ArrayList<>();
 
     public String getName() {
         return name;
@@ -38,6 +42,14 @@ public class Client {
         this.email = email;
     }
 
+    public List<Transaction> getTransactions() {
+        return transactions;
+    }
+
+    public void setTransactions(List<Transaction> transactions) {
+        this.transactions = transactions;
+    }
+
     @Override
     public String toString() {
         return "Client{" +
@@ -45,6 +57,7 @@ public class Client {
                 ", lastName='" + lastName + '\'' +
                 ", age='" + age + '\'' +
                 ", email='" + email + '\'' +
+                ", transactions=" + transactions +
                 '}';
     }
 }

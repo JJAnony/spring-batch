@@ -1,11 +1,8 @@
 package br.com.curse.springbatch.model;
 
 public class Transaction {
-
     private String name;
-
     private String type;
-
     private String value;
 
     public String getName() {
