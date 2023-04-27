@@ -23,11 +23,12 @@ public class DataReader {
 
     @Bean
     public FlatFileItemReader dataItemReader() throws IOException {
-        System.out.println("File Log: " + dataFile.getURI());
         return new FlatFileItemReaderBuilder()
                 .name("data-item-reader")
                 .resource(dataFile)
                 .lineMapper(datalineMapper)
                 .build();
     }
+
+
 }

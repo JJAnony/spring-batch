@@ -8,6 +8,7 @@ import org.springframework.batch.core.configuration.annotation.StepBuilderFactor
 import org.springframework.batch.item.ItemReader;
 import org.springframework.batch.item.ItemWriter;
 import org.springframework.batch.item.file.FlatFileItemReader;
+import org.springframework.batch.item.file.MultiResourceItemReader;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
@@ -19,10 +20,10 @@ public class DataStep {
     private StepBuilderFactory stepFactory;
 
     @Bean
-    public Step clientFileStep(FlatFileItemReader dataItemReader, ItemWriter dataItemWriter) {
+    public Step clientFileStep(MultiResourceItemReader<Client> multiResourceItemReader, ItemWriter dataItemWriter) {
         return stepFactory.get("data-file-step")
                 .<Client, Client>chunk(1)
-                .reader(new ClientReader(dataItemReader))
+                .reader(multiResourceItemReader)
                 .writer(dataItemWriter)
                 .build();
     }

@@ -1,0 +1,6 @@
+0,Test,Silva,32,joao@test.com
+1,t1,pix,50.00
+1,t2,cartao,100.00
+0,Test2,Silva,30,maria@test.com
+1,t3,pix,25.00
+0,Test3,Silva,20,jose@test.com
